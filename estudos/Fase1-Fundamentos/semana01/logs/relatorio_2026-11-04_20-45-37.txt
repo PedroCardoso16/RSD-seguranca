@@ -1,0 +1,16 @@
+===================================
+ RELATÓRIO DO SISTEMA - 2026-11-04_20-45-37 
+===================================
+
+[+] ESPAÇO LIVRE EM DISCO:
+Sist. Arq.      Tam. Usado Disp. Uso% Montado em
+/dev/sda1       219G   26G  183G  13% /
+
+[+] TOP 5 PROCESSOS (MEMÓRIA):
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+pedro-d+   46332  9.1  9.8 12800712 731404 ?     Sl   17:35  17:25 /snap/firefox/9057/usr/lib/firefox/firefox
+pedro-d+   46623  0.8  8.1 11880032 607312 ?     Sl   17:35   1:39 /snap/firefox/9057/usr/lib/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:34950 -prefMapHandle 1:299956 -jsInitHandle 2:162336 -parentBuildID 20261009003443 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {08ae10c6-ca26-4004-b4dd-4fbf9159bcc5} -parentPid 46332 -crashHelperPid 46397 -crashHelper 6 -crashReporter 7 -greomni /snap/firefox/9057/usr/lib/firefox/omni.ja -appomni /snap/firefox/9057/usr/lib/firefox/browser/omni.ja -appDir /snap/firefox/9057/usr/lib/firefox/browser 10 tab
+pedro-d+   46968  0.8  6.3 20199184 477400 ?     Sl   17:35   1:39 /snap/firefox/9057/usr/lib/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:41480 -prefMapHandle 1:299956 -jsInitHandle 2:162336 -parentBuildID 20261009003443 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {393cc055-97a7-47ec-95b5-b5ed0c52d28e} -parentPid 46332 -crashHelperPid 46397 -crashHelper 6 -crashReporter 7 -greomni /snap/firefox/9057/usr/lib/firefox/omni.ja -appomni /snap/firefox/9057/usr/lib/firefox/browser/omni.ja -appDir /snap/firefox/9057/usr/lib/firefox/browser 14 tab
+pedro-d+   47280  1.8  6.3 3125652 470204 ?      Sl   17:35   3:32 /snap/firefox/9057/usr/lib/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:52808 -prefMapHandle 1:299956 -jsInitHandle 2:162336 -parentBuildID 20261009003443 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {d75c9470-4e41-4eae-8a62-777b8c2dfd21} -parentPid 46332 -crashHelperPid 46397 -crashHelper 6 -crashReporter 7 -greomni /snap/firefox/9057/usr/lib/firefox/omni.ja -appomni /snap/firefox/9057/usr/lib/firefox/browser/omni.ja -appDir /snap/firefox/9057/usr/lib/firefox/browser 16 tab
+pedro-d+   46670  0.1  5.7 3083952 427816 ?      Sl   17:35   0:20 /snap/firefox/9057/usr/lib/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:34950 -prefMapHandle 1:299956 -jsInitHandle 2:162336 -parentBuildID 20261009003443 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {57ad172d-cadd-4aa6-8619-58e8e02b99b4} -parentPid 46332 -crashHelperPid 46397 -crashHelper 6 -crashReporter 7 -greomni /snap/firefox/9057/usr/lib/firefox/omni.ja -appomni /snap/firefox/9057/usr/lib/firefox/browser/omni.ja -appDir /snap/firefox/9057/usr/lib/firefox/browser 12 tab
+===================================
