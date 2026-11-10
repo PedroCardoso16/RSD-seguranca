@@ -12,7 +12,25 @@ Este diretório documenta o estudo dos fundamentos de redes de computadores, um 
 - **`tcpdump`**: Captura de pacotes em linha de comandos (CLI), aplicação de filtros básicos (por IP, porta e protocolo).
 - **Wireshark**: Análise visual profunda (GUI) de ficheiros de captura (`.pcap`), inspeção de *Three-Way Handshake* (TCP) e identificação de tráfego em texto limpo (HTTP, FTP, Telnet).
 
-## 📂 Prática e Capturas
+## 📂 Prática e Evidências
 
-Os ficheiros de captura de rede gerados durante os laboratórios estão armazenados na subpasta `capturas/`:
-- *(Adicione aqui os nomes dos ficheiros `.pcap` à medida que fizer os laboratórios de Wireshark)*.
+Durante esta semana, realizei testes práticos de reconhecimento de rede e interceção de pacotes no terminal, garantindo a sanitização de dados sensíveis (Security Mindset) antes da publicação.
+
+### 1. Diagnóstico e Mapeamento (CLI)
+
+*   **Identidade na Rede (`ip a`)**: Identificação das interfaces locais. Endereços MAC e IPs públicos (IPv6) foram devidamente censurados.
+    ![Evidência IP A](./capturas/ping_a.png)
+
+*   **Conectividade e DNS (`ping`)**: Validação da comunicação ICMP e da resolução de nomes.
+    ![Evidência Ping](./capturas/ping_-c_4_google.com.png)
+
+*   **Rastreamento de Rotas (`traceroute`)**: Mapeamento dos *hops* desde o gateway local até ao destino.
+    ![Evidência Traceroute](./capturas/traceroute_8.8.8.8.png)
+
+*   **Serviços Ativos (`ss -tulpn`)**: Identificação de portas lógicas em escuta e dos respetivos processos no sistema.
+    ![Evidência SS](./capturas/ss_-tulpn"->semSudo".png)
+
+### 2. Interceção de Tráfego
+
+Os ficheiros de captura gerados no laboratório estão armazenados na subpasta `capturas/`:
+*   📄 **`trafego_laboratorio.pcap`**: Captura de 100 pacotes de tráfego real executada via `tcpdump` (`sudo tcpdump -i wlp5s0 -c 100 -w ...`).
