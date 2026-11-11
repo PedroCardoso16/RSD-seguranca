@@ -1,36 +1,43 @@
-# 🌐 Semana 03: Redes - Modelo OSI, TCP/IP e Wireshark
+# 🌐 Semana 03 — Redes: OSI, TCP/IP, portas e captura de tráfego (diário de laboratório)
 
-Este diretório documenta o estudo dos fundamentos de redes de computadores, um pilar essencial para qualquer área da Cibersegurança. Compreender como os pacotes viajam, como as portas comunicam e como os protocolos operam é o que permite identificar anomalias e vulnerabilidades em sistemas.
+> Este repositório guarda só laboratórios e problemas resolvidos. A teoria foi estudada fora dele.
 
-## 🎯 Objetivos Concluídos
-- Compreensão estrutural do **Modelo OSI** (7 Camadas) e a sua correlação com a arquitetura **TCP/IP** (4 Camadas).
-- Endereçamento IPv4/IPv6, máscaras de rede, Subnetting e portas lógicas (TCP/UDP).
-- Utilização de ferramentas de diagnóstico de rede via CLI no Linux (`ping`, `traceroute`, `netstat`/`ss`, `ip a`).
-- Introdução à análise de tráfego (Sniffing) com foco na interceção de pacotes.
+- **Fase:** Fase1-Fundamentos
+- **Tema:** Redes: modelo OSI, TCP/IP, portas e protocolos
+- **Observação:** semana feita antes da estrutura atual do repositório e reorganizada depois.
 
-## 🛠️ Ferramentas Exploradas
-- **`tcpdump`**: Captura de pacotes em linha de comandos (CLI), aplicação de filtros básicos (por IP, porta e protocolo).
-- **Wireshark**: Análise visual profunda (GUI) de ficheiros de captura (`.pcap`), inspeção de *Three-Way Handshake* (TCP) e identificação de tráfego em texto limpo (HTTP, FTP, Telnet).
+## Tópicos praticados
+- Diagnóstico pela CLI: `ip a`, `ping`, `traceroute`, `ss -tulpn`
+- Captura de pacotes com `tcpdump` e análise no Wireshark (arquivo `.pcap`)
+- Conceitos aplicados na prática: camadas OSI e TCP/IP, endereçamento IPv4/IPv6, portas TCP/UDP, handshake de três vias
 
-## 📂 Prática e Evidências
+## Laboratórios e problemas
+| Laboratório | Status | Link |
+|---|---|---|
+| Diagnóstico de rede pela CLI | ✅ concluído | [desafio](./desafios/diagnostico-de-rede-cli.md) |
+| Captura de 100 pacotes com tcpdump | ✅ concluído | [desafio](./desafios/captura-de-trafego-tcpdump.md) |
 
-Durante esta semana, realizei testes práticos de reconhecimento de rede e interceção de pacotes no terminal, garantindo a sanitização de dados sensíveis (Security Mindset) antes da publicação.
+## Evidências
+![ip a](./capturas/dia-01_diagnostico_ip-a.png)
+![ping](./capturas/dia-02_diagnostico_ping-google.png)
+![traceroute](./capturas/dia-03_diagnostico_traceroute-8-8-8-8.png)
+![ss](./capturas/dia-04_servicos_ss-tulpn.png)
 
-### 1. Diagnóstico e Mapeamento (CLI)
+Captura de pacotes: [`dia-05_tcpdump_trafego-laboratorio.pcap`](./capturas/dia-05_tcpdump_trafego-laboratorio.pcap)
 
-*   **Identidade na Rede (`ip a`)**: Identificação das interfaces locais. Endereços MAC e IPs públicos (IPv6) foram devidamente censurados.
-    ![Evidência IP A](./capturas/ping_a.png)
+## Arquivos
+- Desafios: [`desafios/`](./desafios/)
+- Capturas: [`capturas/`](./capturas/)
+- Não há scripts nem logs nesta semana.
 
-*   **Conectividade e DNS (`ping`)**: Validação da comunicação ICMP e da resolução de nomes.
-    ![Evidência Ping](./capturas/ping_-c_4_google.com.png)
+## O que tentei e errei
+_(preencher)_
 
-*   **Rastreamento de Rotas (`traceroute`)**: Mapeamento dos *hops* desde o gateway local até ao destino.
-    ![Evidência Traceroute](./capturas/traceroute_8.8.8.8.png)
+## Como resolvi
+_(preencher)_
 
-*   **Serviços Ativos (`ss -tulpn`)**: Identificação de portas lógicas em escuta e dos respetivos processos no sistema.
-    ![Evidência SS](./capturas/ss_-tulpn"->semSudo".png)
+## Dificuldades
+_(preencher)_
 
-### 2. Interceção de Tráfego
-
-Os ficheiros de captura gerados no laboratório estão armazenados na subpasta `capturas/`:
-*   📄 **`trafego_laboratorio.pcap`**: Captura de 100 pacotes de tráfego real executada via `tcpdump` (`sudo tcpdump -i wlp5s0 -c 100 -w ...`).
+## Lições aprendidas
+_(preencher)_

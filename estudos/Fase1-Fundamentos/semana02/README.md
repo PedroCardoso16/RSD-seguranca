@@ -1,22 +1,36 @@
-# 📜 Semana 02: Shell Scripting Básico em Bash
+# 📜 Semana 02 — Shell scripting básico em Bash (diário de laboratório)
 
-Este diretório contém os estudos e scripts desenvolvidos durante a segunda semana de Fundamentos. O foco foi transformar a execução manual de comandos Linux em rotinas automatizadas, uma competência vital para administração de sistemas e segurança (Blue Team/Red Team).
+> Este repositório guarda só laboratórios e problemas resolvidos. A teoria foi estudada fora dele.
 
-## 🎯 Objetivos Concluídos
-- Compreensão da estrutura de um script Bash (Shebang `#!/bin/bash`, permissões de execução).
-- Utilização de variáveis, passagem de argumentos (`$1`, `$2`) e códigos de saída (`exit 0`, `exit 1`).
-- Estruturas de controlo de fluxo: Condicionais (`if`, `elif`, `else`) e Loops (`for`, `while`).
-- Criação de scripts práticos focados no dia a dia de um administrador/analista de segurança.
+- **Fase:** Fase1-Fundamentos
+- **Tema:** Shell scripting básico em Bash
+- **Observação:** semana feita antes da estrutura atual do repositório e reorganizada depois.
 
-## 🛠️ Ferramentas e Conceitos Aplicados
-- **Arquivamento e Compressão:** Uso de `tar` e `gzip` para rotinas de backup.
-- **Análise de Logs (Parsing):** Extração de dados específicos de ficheiros de log do sistema usando `grep`, `awk` e expressões regulares básicas.
-- **Automação de Tarefas:** Scripts para verificação de serviços e manutenção do sistema.
+## Tópicos praticados
+- Estrutura de script: shebang, permissão de execução, variáveis, argumentos (`$1`, `$0`), códigos de saída
+- Condicionais (`if`), testes de arquivo (`-r`, `-z`), checagem de root (`$EUID`)
+- `tar -czf` para backup, `grep` e `awk` para parsing de log, `apt-get` para manutenção
 
-## 📂 Scripts Desenvolvidos
+## Laboratórios e problemas
+| Problema | Status | Link |
+|---|---|---|
+| Backup `.tar.gz` de um diretório | ⚠️ funciona; mensagem de uso com typo (`excho`) | [desafio](./desafios/backup_seguro.md) · [script](./scripts/backup_seguro.sh) |
+| Parser de falhas de login SSH | ✅ sintaxe ok (depende de `/var/log/auth.log`) | [desafio](./desafios/parser_logs.md) · [script](./scripts/parser_logs.sh) |
+| Manutenção automática do sistema | ✅ sintaxe ok (requer `sudo`) | [desafio](./desafios/automacao_manutencao.md) · [script](./scripts/automacao_manutencao.sh) |
 
-Os códigos fonte encontram-se na pasta `scripts/`:
+## Arquivos
+- Desafios: [`desafios/`](./desafios/)
+- Scripts: [`scripts/`](./scripts/)
+- Não há logs nem capturas salvos nesta semana.
 
-1. **`backup_seguro.sh`**: Script que recebe um diretório alvo, cria um arquivo comprimido `.tar.gz` com a data atual e guarda-o num diretório de backups seguro.
-2. **`parser_logs.sh`**: Ferramenta de auditoria que lê o ficheiro `/var/log/auth.log` (ou similar) e extrai todas as tentativas falhadas de login SSH (Brute Force).
-3. **`automacao_manutencao.sh`**: Script que automatiza a atualização de pacotes do sistema e a limpeza de dependências órfãs.
+## O que tentei e errei
+_(preencher)_
+
+## Como resolvi
+_(preencher)_ — pendente: corrigir `excho` → `echo` na linha 4 do `backup_seguro.sh`.
+
+## Dificuldades
+_(preencher)_
+
+## Lições aprendidas
+_(preencher)_

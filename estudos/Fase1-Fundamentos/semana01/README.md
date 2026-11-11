@@ -1,38 +1,42 @@
-# 🐧 Semana 01: Fundamentos de Linux e Terminal
+# 🐧 Semana 01 — Linux e terminal (diário de laboratório)
 
-Este diretório documenta as práticas e laboratórios realizados durante a primeira semana do cronograma de Cibersegurança, focando na base essencial de administração de sistemas Linux e manipulação avançada via interface de linha de comando (CLI).
+> Este repositório guarda só laboratórios e problemas resolvidos. A teoria foi estudada fora dele.
 
-## 🎯 Objetivos Concluídos
-- Navegação fluente e compreensão da hierarquia de diretórios do Linux (`/etc`, `/var`, `/home`, `/tmp`).
-- Gestão de arquivos e diretórios via terminal (criação, cópia, movimentação e exclusão segura).
-- Administração de permissões e grupos de usuários, com foco na conversão entre notação simbólica e octal (`chmod`).
-- Utilização de utilitários de busca, filtros de texto e encadeamento de fluxos de dados (Pipes e Redirecionamentos).
-- Monitoramento de processos, gestão de memória e administração de serviços do sistema operacional (`systemd`).
+- **Fase:** Fase1-Fundamentos
+- **Tema:** Linux: estrutura de diretórios, arquivos, permissões, filtros e processos
+- **Observação:** semana feita antes da estrutura atual do repositório e reorganizada depois.
 
-## 🛠️ Comandos e Ferramentas Exploradas
+## Tópicos praticados
+- Estrutura do sistema: `pwd`, `ls -la`, `cd` (absoluto e relativo), `tree`, `df -h`, `du -sh`
+- Arquivos: `mkdir -p`, `touch`, `cp -r`, `mv`, `rm -r`, `cat`, `less`, `head`, `tail`, redirecionamentos `>` e `>>`
+- Permissões: `chmod` (simbólico e octal), `id`, `groups`, `useradd`
+- Busca e filtros: `grep`, `find`, `wc`, `cut`, pipes (`sort | uniq -c | sort -nr`)
+- Processos e serviços: `ps aux`, `htop`, `&`, `kill`, `systemctl`, `journalctl`
 
-### 1. Estrutura e Manipulação
-- **Navegação e Inspeção:** `pwd`, `ls -la`, `cd` (caminhos absolutos e relativos), `tree`, `df -h`, `du -sh`.
-- **Gestão de Arquivos:** `mkdir -p`, `touch`, `cp -r`, `mv`, `rm -r`.
-- **Visualização de Dados:** `cat`, `less`, `head`, `tail`.
-- **Redirecionamentos:** `>` (sobrescrever) e `>>` (anexar).
+## Laboratórios e problemas
+| Dia | Laboratório | Status | Link |
+|---|---|---|---|
+| Seg | Estrutura do sistema | ✅ feito (sem arquivo salvo) | — |
+| Ter | Manipulação de arquivos | ✅ feito (sem arquivo salvo) | — |
+| Qua | Permissões | ✅ feito (sem arquivo salvo) | — |
+| Qui | Busca e filtros | ✅ feito (sem arquivo salvo) | — |
+| Sex | Processos e serviços | ✅ feito (sem arquivo salvo) | — |
+| Sáb | Prática integrada: organizador por extensão e relatório do sistema | ⚠️ relatório ok; organizador com erros de sintaxe | [desafio](./desafios/dia-06_pratica-integrada.md) |
+| Dom | Revisão | ✅ feito (sem arquivo salvo) | — |
 
-### 2. Gestão de Acessos e Permissões
-- Leitura e interpretação detalhada da string de permissões (Dono, Grupo, Outros).
-- Alteração restritiva de modos (ex: `chmod 400`, `chmod +x`).
-- Gestão de identidade e auditoria de usuários: `id`, `groups`, `useradd`.
+## Arquivos
+- Desafios: [`desafios/`](./desafios/)
+- Scripts: [`scripts/organizador.sh`](./scripts/organizador.sh), [`scripts/relatorio_sistema.sh`](./scripts/relatorio_sistema.sh)
+- Logs: [`logs/relatorio_2026-11-04_20-45-37.txt`](./logs/relatorio_2026-11-04_20-45-37.txt)
 
-### 3. Filtros, Buscas e Pipes
-- **Buscas em Arquivos:** `find` (utilizando parâmetros de nome e modificação temporal como `-mtime`).
-- **Análise Textual:** `grep`, `wc`, `cut`.
-- **Processamento em Cadeia:** Encadeamento lógico de comandos (ex: `sort | uniq -c | sort -nr`).
+## O que tentei e errei
+_(preencher)_
 
-### 4. Processos e Serviços (Systemd)
-- **Monitoramento e Intervenção:** `ps aux`, `htop`, execução em background (`&`) e encerramento de processos (`kill`).
-- **Administração de Serviços:** `systemctl list-units`, `systemctl status`.
-- **Auditoria de Logs:** Extração de eventos críticos do sistema com `journalctl`.
+## Como resolvi
+_(preencher)_ — pendente: corrigir os 3 pontos do `organizador.sh` listados no desafio.
 
-## 🚀 Prática Integrada (Automação Inicial)
-Para consolidar o conhecimento teórico, foram desenvolvidas rotinas iniciais de automação em Bash na subpasta `scripts/`:
-1. **Organizador de Arquivos:** Script que categoriza e move arquivos automaticamente para subpastas baseadas em suas extensões.
-2. **Relatório de Sistema:** Script gerador de sumários operacionais (data, espaço livre em disco e top 5 processos com maior consumo de memória).
+## Dificuldades
+_(preencher)_
+
+## Lições aprendidas
+_(preencher)_
