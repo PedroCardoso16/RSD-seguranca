@@ -30,13 +30,21 @@
 - Logs: [`logs/relatorio_2026-11-04_20-45-37.txt`](./logs/relatorio_2026-11-04_20-45-37.txt)
 
 ## O que tentei e errei
-_(preencher)_
+- **`organizador.sh`:** tentei mover cada arquivo de uma pasta para uma subpasta com o nome da extensão (`for` + `mkdir -p` + `mv`). O script não executa por três erros: `[ -z "$1"]` sem espaço antes do `]` (linha 3), `fo` no lugar de `do` no `for` (linha 17) e `exit` sem código na mensagem de uso (linha 5).
+- **`relatorio_sistema.sh`:** funcionou de primeira no teste; o relatório de 2026-11-04 20:45:37 está em `logs/`.
 
 ## Como resolvi
-_(preencher)_ — pendente: corrigir os 3 pontos do `organizador.sh` listados no desafio.
+- **Relatório:** nome do arquivo com `date`, pasta criada com `mkdir -p ../logs`, `df -h /` para o disco e `ps aux --sort=-%mem | head -n 6` (cabeçalho + 5 processos). A primeira linha usa `>` (cria o arquivo) e as demais usam `>>` (acrescentam).
+- **Organizador:** pendente. Falta corrigir os três pontos acima e testar numa pasta com `.txt`, `.png` e `.pdf`.
 
 ## Dificuldades
-_(preencher)_
+- Erros de digitação só aparecem na hora de rodar. O Bash acusou o `fo` e o `]` colado só na execução.
+- O relatório grava em `../logs`, então só funciona se for executado de dentro de `scripts/`.
+- O `ps aux` imprime a linha de comando inteira. No log, cada processo do Firefox ocupa uma linha enorme. Uma alternativa é `ps -eo pid,user,%mem,comm --sort=-%mem | head -n 6`.
+- Ponto de atenção no organizador: a extensão vem de `${arquivo##*.}` sobre o caminho completo. Se a pasta tiver um ponto no caminho e o arquivo não tiver extensão, o resultado sai errado.
 
 ## Lições aprendidas
-_(preencher)_
+- `bash -n script.sh` checa a sintaxe sem executar o script.
+- Mensagem de uso com `$0` e saída de erro com `exit 1`; `exit` sozinho devolve o status do último comando.
+- Colocar variáveis entre aspas (`"$ALVO"`) evita problemas com espaços nos nomes.
+- Leitura do relatório do dia 04/11: disco com 13% de uso (26G de 219G) e os 5 maiores consumidores de memória eram processos do Firefox, o maior com 9,8% da memória.

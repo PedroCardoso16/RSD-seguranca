@@ -24,13 +24,24 @@
 - Não há logs nem capturas salvos nesta semana.
 
 ## O que tentei e errei
-_(preencher)_
+- **`backup_seguro.sh`:** o `echo` da mensagem de uso foi digitado `excho` (linha 4), então sem argumento o Bash mostra `command not found` em vez do uso. O script ainda sai com `exit 1`.
+- **`parser_logs.sh`:** pedi ajuda a uma IA para formatar a saída do `awk` e comentei no código o que cada parte faz.
+- **`automacao_manutencao.sh`:** sem erros encontrados na checagem de sintaxe.
 
 ## Como resolvi
-_(preencher)_ — pendente: corrigir `excho` → `echo` na linha 4 do `backup_seguro.sh`.
+- **Backup:** nome do arquivo com `date` e `basename`, compactação com `tar -czf` e verificação de sucesso com `$?`.
+- **Parser:** `grep "Failed password"` seguido de `awk` (cada espaço separa um campo: data, usuário, IP) e `tail -n 10`. Antes de ler, testa se o log é legível com `-r`.
+- **Manutenção:** recusa rodar sem root (`$EUID -ne 0`) e usa `apt-get -yqq` para atualizar, limpar órfãos e cache.
+- **Pendente:** corrigir `excho` → `echo` na linha 4 do `backup_seguro.sh`.
 
 ## Dificuldades
-_(preencher)_
+- `2>/dev/null` no `tar` esconde a causa quando o backup falha (por exemplo, falta de permissão). O script só mostra "Erro ao criar o backup".
+- `basename $ALVO` e `mkdir -p $DESTINO` estão sem aspas e quebram se o caminho tiver espaços.
+- O backup vai para `/tmp/backups`, que é apagado em reinicializações. Para um backup de verdade, o destino deveria ser uma pasta persistente.
+- No parser, `$9` e `$11` valem para `Failed password for <usuario> from <ip>`. Nas linhas com `invalid user` os campos se deslocam. Em sistemas sem `/var/log/auth.log` o script só avisa e sai.
 
 ## Lições aprendidas
-_(preencher)_
+- `$?` guarda o status do último comando: 0 significa sucesso, qualquer outro valor é falha.
+- `tar -czf` empacota e comprime; `2>/dev/null` descarta a saída de erro.
+- `awk` divide cada linha em campos (`$1`, `$2`...), e as posições dependem do formato do log.
+- Script que altera o sistema deve conferir se está rodando como root antes de qualquer comando.

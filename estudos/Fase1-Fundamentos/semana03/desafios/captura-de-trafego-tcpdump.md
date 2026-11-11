@@ -18,7 +18,17 @@ Arquivo gerado: [`capturas/dia-05_tcpdump_trafego-laboratorio.pcap`](../capturas
 - A maior parte do tráfego IP é TCP na porta 443 (HTTPS, conteúdo cifrado) e há 3 pacotes UDP na porta 123 (NTP).
 - Nenhuma credencial ou texto legível em texto limpo foi encontrada no conteúdo dos pacotes.
 
+- Nenhum handshake TCP no arquivo: 0 pacotes SYN e 0 SYN/ACK (há 6 FIN e 4 RST). A captura pegou conexões já em andamento.
+
 Critério de "concluído": arquivo `.pcap` gerado e aberto no Wireshark, com pelo menos um fluxo TCP identificado (handshake SYN, SYN/ACK, ACK).
+
+Status: ⚠️ captura feita, critério do handshake pendente. Para fechar, gere uma captura que pegue o início de uma conexão:
+```bash
+sudo tcpdump -i wlp5s0 -w handshake.pcap port 443
+# em outro terminal:
+curl -sI https://example.com
+# Ctrl+C no tcpdump e, no Wireshark, filtre: tcp.flags.syn == 1
+```
 
 ## Atenção antes de publicar
 O `.pcap` contém endereços MAC e IPs reais da sua rede. Veja o aviso na conversa antes do `git push` em repositório público.
