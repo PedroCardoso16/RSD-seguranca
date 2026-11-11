@@ -23,11 +23,11 @@
 ![traceroute](./capturas/dia-03_diagnostico_traceroute-8-8-8-8.png)
 ![ss](./capturas/dia-04_servicos_ss-tulpn.png)
 
-Captura de pacotes: [`dia-05_tcpdump_trafego-laboratorio.pcap`](./capturas/dia-05_tcpdump_trafego-laboratorio.pcap)
+Captura de pacotes: o arquivo `.pcap` fica só no meu computador (contém endereços da minha rede), por isso não é versionado. O resumo da análise está no desafio.
 
 ## Arquivos
 - Desafios: [`desafios/`](./desafios/)
-- Capturas: [`capturas/`](./capturas/)
+- Capturas: [`capturas/`](./capturas/) (somente prints)
 - Não há scripts nem logs nesta semana.
 
 ## O que tentei e errei

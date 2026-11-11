@@ -10,7 +10,7 @@ Captura de 100 pacotes na interface Wi-Fi com `tcpdump`:
 sudo tcpdump -i wlp5s0 -c 100 -w trafego_laboratorio.pcap
 ```
 
-Arquivo gerado: [`capturas/dia-05_tcpdump_trafego-laboratorio.pcap`](../capturas/dia-05_tcpdump_trafego-laboratorio.pcap), aberto no Wireshark para a análise.
+Arquivo gerado: `trafego_laboratorio.pcap`, aberto no Wireshark para a análise. O arquivo fica só no meu computador e não é versionado, porque contém endereços reais da minha rede.
 
 ## Resumo conferido do arquivo
 - 100 pacotes, enlace Ethernet.
@@ -29,6 +29,3 @@ sudo tcpdump -i wlp5s0 -w handshake.pcap port 443
 curl -sI https://example.com
 # Ctrl+C no tcpdump e, no Wireshark, filtre: tcp.flags.syn == 1
 ```
-
-## Atenção antes de publicar
-O `.pcap` contém endereços MAC e IPs reais da sua rede. Veja o aviso na conversa antes do `git push` em repositório público.
