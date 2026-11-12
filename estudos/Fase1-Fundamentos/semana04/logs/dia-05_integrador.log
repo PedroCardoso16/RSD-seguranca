@@ -1,0 +1,127 @@
+=== 1. TESTE DE RESOLUÇÃO DNS ===
+[+] IP resolvido para debian.org: 151.101.130.132
+
+=== 2. CHECAGEM DE INTERFACES ===
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+3: wlp5s0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
+    altname wlx945330e721cd
+    inet 10.122.160.236/24 brd 10.122.160.255 scope global dynamic noprefixroute wlp5s0
+       valid_lft 2802sec preferred_lft 2802sec
+
+=== 3. ATIVAÇÃO DE ROTEAMENTO (IP FORWARD) ===
+net.ipv4.ip_forward = 1
+
+=== 4. APLICAÇÃO DE REGRAS DE FIREWALL INTEGRADAS ===
+[+] Interface de saída identificada: wlp5s0
+
+=== 5. VALIDAÇÃO DA TABELA DE REGRAS ===
+Chain INPUT (policy DROP 0 packets, 0 bytes)
+num   pkts bytes target     prot opt in     out     source               destination         
+1        0     0 ACCEPT     all  --  lo     *       0.0.0.0/0            0.0.0.0/0           
+2        0     0 ACCEPT     all  --  *      *       0.0.0.0/0            0.0.0.0/0            ctstate RELATED,ESTABLISHED
+3        0     0 ACCEPT     tcp  --  *      *       0.0.0.0/0            0.0.0.0/0            tcp dpt:22
+4        0     0 ACCEPT     udp  --  *      *       0.0.0.0/0            0.0.0.0/0            udp dpt:53
+
+Chain FORWARD (policy DROP 0 packets, 0 bytes)
+num   pkts bytes target     prot opt in     out     source               destination         
+
+Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
+num   pkts bytes target     prot opt in     out     source               destination         
+
+Chain ufw-after-forward (0 references)
+num   pkts bytes target     prot opt in     out     source               destination         
+
+Chain ufw-after-input (0 references)
+num   pkts bytes target     prot opt in     out     source               destination         
+
+Chain ufw-after-logging-forward (0 references)
+num   pkts bytes target     prot opt in     out     source               destination         
+
+Chain ufw-after-logging-input (0 references)
+num   pkts bytes target     prot opt in     out     source               destination         
+
+Chain ufw-after-logging-output (0 references)
+num   pkts bytes target     prot opt in     out     source               destination         
+
+Chain ufw-after-output (0 references)
+num   pkts bytes target     prot opt in     out     source               destination         
+
+Chain ufw-before-forward (0 references)
+num   pkts bytes target     prot opt in     out     source               destination         
+
+Chain ufw-before-input (0 references)
+num   pkts bytes target     prot opt in     out     source               destination         
+
+Chain ufw-before-logging-forward (0 references)
+num   pkts bytes target     prot opt in     out     source               destination         
+
+Chain ufw-before-logging-input (0 references)
+num   pkts bytes target     prot opt in     out     source               destination         
+
+Chain ufw-before-logging-output (0 references)
+num   pkts bytes target     prot opt in     out     source               destination         
+
+Chain ufw-before-output (0 references)
+num   pkts bytes target     prot opt in     out     source               destination         
+
+Chain ufw-logging-allow (0 references)
+num   pkts bytes target     prot opt in     out     source               destination         
+
+Chain ufw-logging-deny (0 references)
+num   pkts bytes target     prot opt in     out     source               destination         
+
+Chain ufw-not-local (0 references)
+num   pkts bytes target     prot opt in     out     source               destination         
+
+Chain ufw-reject-forward (0 references)
+num   pkts bytes target     prot opt in     out     source               destination         
+
+Chain ufw-reject-input (0 references)
+num   pkts bytes target     prot opt in     out     source               destination         
+
+Chain ufw-reject-output (0 references)
+num   pkts bytes target     prot opt in     out     source               destination         
+
+Chain ufw-skip-to-policy-forward (0 references)
+num   pkts bytes target     prot opt in     out     source               destination         
+
+Chain ufw-skip-to-policy-input (0 references)
+num   pkts bytes target     prot opt in     out     source               destination         
+
+Chain ufw-skip-to-policy-output (0 references)
+num   pkts bytes target     prot opt in     out     source               destination         
+
+Chain ufw-track-forward (0 references)
+num   pkts bytes target     prot opt in     out     source               destination         
+
+Chain ufw-track-input (0 references)
+num   pkts bytes target     prot opt in     out     source               destination         
+
+Chain ufw-track-output (0 references)
+num   pkts bytes target     prot opt in     out     source               destination         
+
+Chain ufw-user-forward (0 references)
+num   pkts bytes target     prot opt in     out     source               destination         
+
+Chain ufw-user-input (0 references)
+num   pkts bytes target     prot opt in     out     source               destination         
+
+Chain ufw-user-limit (0 references)
+num   pkts bytes target     prot opt in     out     source               destination         
+
+Chain ufw-user-limit-accept (0 references)
+num   pkts bytes target     prot opt in     out     source               destination         
+
+Chain ufw-user-logging-forward (0 references)
+num   pkts bytes target     prot opt in     out     source               destination         
+
+Chain ufw-user-logging-input (0 references)
+num   pkts bytes target     prot opt in     out     source               destination         
+
+Chain ufw-user-logging-output (0 references)
+num   pkts bytes target     prot opt in     out     source               destination         
+
+Chain ufw-user-output (0 references)
+num   pkts bytes target     prot opt in     out     source               destination         
